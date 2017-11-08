@@ -1,0 +1,14 @@
+bmptk_fixed_size_stack.c
+.codelite/
+.clang/
+Debug/
+Release/
+*.mk
+*.o
+*.exe
+*.map
+*.ld
+*.bin
+*.elf
+*.bak
+html/
