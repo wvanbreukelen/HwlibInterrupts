@@ -10,8 +10,6 @@
   <VirtualDirectory Name="src">
     <File Name="main.cpp"/>
     <File Name="Makefile"/>
-    <File Name="pio.c"/>
-    <File Name="pio.h"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>
