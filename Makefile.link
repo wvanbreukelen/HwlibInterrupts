@@ -25,5 +25,9 @@ include           $(RTOS)/Makefile.inc
 # set BMPTK to the bmptk subdirectory
 BMPTK := $(TI-SOFTWARE)/bmptk
 
+# add sam.h library
+SEARCH	+= $(BMPTK)/targets/cortex/atmel/sam3xa/include
+SEARCH	+= $(BMPTK)/targets/cortex/atmel/sam3xa/source
+
 # Defer to the bmptk/Makefile.inc to do the work
 include $(BMPTK)/Makefile.inc
