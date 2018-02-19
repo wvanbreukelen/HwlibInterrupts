@@ -3,8 +3,6 @@
 
 #include "system_sam3xa.h"
 
-#include "pio.h"
-
 extern "C"
 {
 	void PIOA_Handler(void)
@@ -48,25 +46,7 @@ uint32_t port_index_to_id(uint32_t port) {
 	}
 }
 
-int main(void) {
-	PMC->PMC_PCER0 = 0b111111 << 11;// enable clock to all GPIO registers
-	
-	hwlib::target::pin_info_type pin_info = hwlib::target::pin_info(hwlib::target::pins::d49);
-	
-	Pio& pinPort = port_index_to_reg(pin_info.port);
-	pio_type_t pinMask = (pio_type_t) pin_info.pin;
-	
-	pio_set_output(&pinPort, pinMask, 0, false, true);
-	pio_set_input(&pinPort, pinMask, 0);
-	pio_pull_up(&pinPort, pinMask, false);
-	
-	while (true) {
-		hwlib::cout << pio_get(&pinPort, (pio_type_t) PIO_TYPE_PIO_INPUT, pinMask) << hwlib::endl;
-		hwlib::wait_ms(100);
-	}
-}
-
-/*int main(void)
+int main(void)
 {
 	SystemInit();
 	
@@ -107,4 +87,4 @@ int main(void) {
 		hwlib::cout << hwlib::endl;
 		hwlib::wait_ms(100);
 	}
-}*/
+}

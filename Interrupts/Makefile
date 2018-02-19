@@ -9,10 +9,10 @@
 #############################################################################
 
 # source files in this project (main.cpp is automatically assumed)
-SOURCES := system_sam3xa.c pio.c
+SOURCES := system_sam3xa.c
 
 # header files in this project
-HEADERS := pio.h
+HEADERS := 
 
 # other places to look for files for this project
 SEARCH  := 
